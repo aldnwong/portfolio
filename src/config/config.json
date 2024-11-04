@@ -1,7 +1,7 @@
 {
     "sequence": {
-        "unhighlighted":"Alden",
         "words":["Alden", "student", "developer", "video editor"],
+        "unhighlighted":"Alden",
         "obfuscationSymbols":"BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz!@?#",
         "typeTime":60,
         "deleteTime":55,
