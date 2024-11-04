@@ -1,15 +1,10 @@
-// IMPORT CONFIG, GET WORDS LIST
 import config from '../config/config.json';
-const words = config.words;
-
-// SET OBFUSCATED WORDS LETTERING
-const obfLetters = config.obfuscationSymbols;
-
-// CREATE AND SET h2 ELEMENTS
-const bgTextElementsAmt = config.bgTextElementsAmt;
-const h2MarginMax = config.h2MarginMax;
-const transition = config.h2Transition;
-const h2LineLength = config.h2LineLength;
+const words = config.sequence.words;
+const obfLetters = config.sequence.obfuscationSymbols;
+const bgTextElementsAmt = config.backgroundText.amount;
+const h2MarginMax = config.backgroundText.marginMax;
+const transitionTime = config.backgroundText.transitionTime;
+const h2LineLength = config.backgroundText.lineLength;
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -75,6 +70,6 @@ for (let i = 0; i < bgTextElementsAmt; i++) {
         element.innerHTML += text;
     }
     element.style.marginLeft = (Math.random()*h2MarginMax)+"vw";
-    element.style.transition = transition+"s";
+    element.style.transition = transitionTime;
     element.classList.add("bgTE");
 }

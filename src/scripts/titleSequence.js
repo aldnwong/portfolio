@@ -7,16 +7,16 @@
 
 // IMPORT CONFIG VALUES
 import config from '../config/config.json';
-const words = config.words;
-const unhighlightedWord = config.unhighlighted;
-var typeTime = config.typeTime;
-var deleteTime = config.deleteTime;
-var switchTime = config.switchTime;
-const obfLetters = config.obfuscationSymbols;
-const highlightColor = config.highlightColor;
-const bgColor = config.bgColor;
-const bgTextTransitionTime = config.bgTextTransitionTime;
-const reducedModeThreshold = config.reducedModeThreshold;
+const words = config.sequence.words;
+const unhighlightedWord = config.sequence.unhighlighted;
+var typeTime = config.sequence.typeTime;
+var deleteTime = config.sequence.deleteTime;
+var switchTime = config.sequence.switchTime;
+const obfLetters = config.sequence.obfuscationSymbols;
+const highlightColor = config.backgroundText.highlightedColor;
+const bgColor = config.backgroundText.color;
+const reducedModeThreshold = config.sequence.reducedModeThreshold;
+const bgTextTransitionTime = config.backgroundText.transitionTime;
 var doHighlight = true;
 var doSpeedTest = true;
 

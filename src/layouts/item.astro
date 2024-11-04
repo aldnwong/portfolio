@@ -3,9 +3,9 @@ const { type, title, description, linkText, link, image, imgPos } = Astro.props;
 var displayImg = (image) ? "block" : "none";
 var displayLText = (link) ? "inline-block" : "none";
 
-import colors from '../config/gridColors.json';
-var mainColor = (type && colors[type]) ? colors[type].mainColor : colors.default.mainColor;
-var bgColor = (type && colors[type]) ? colors[type].bgColor : colors.default.bgColor;
+import config from '../config/config.json';
+var mainColor = (type && config.projectGrid[type]) ? config.projectGrid[type].mainColor : config.projectGrid.default.mainColor;
+var bgColor = (type && config.projectGrid[type]) ? config.projectGrid[type].bgColor : config.projectGrid.default.bgColor;
 
 var subtitle = (type) ? type.toUpperCase().replace("_", " ") : "UNCATEGORIZED";
 ---
