@@ -1,0 +1,19 @@
+.hide {
+    opacity: 0;
+    transform: translateX(-10%);
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.hideMove {
+    opacity: 0;
+    scale: 0.98;
+}
+
+.showMove {
+    opacity: 1;
+    scale: 1;
+}

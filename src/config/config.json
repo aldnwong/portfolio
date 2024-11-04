@@ -1,0 +1,21 @@
+{
+    "unhighlighted":"Alden",
+    "words":["Alden", "student", "developer", "video editor"],
+    "obfuscationSymbols":"BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz!@?#",
+
+    "typeTime":60,
+    "deleteTime":55,
+    "switchTime":2500,
+
+    "highlightColor":"rgb(85, 85, 85)",
+    "bgColor":"rgb(55, 55, 55)",
+    "bgTextTransitionTime":"1s",
+
+    "h2LineLength":400,
+    "h2MarginMax":70,
+    "h2Transition":1,
+
+    "bgTextElementsAmt":32,
+
+    "reducedModeThreshold":2000
+}

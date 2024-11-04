@@ -1,0 +1,49 @@
+.itemGrid {
+    columns: 4;
+    column-gap: 1em;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+@media only screen and (max-width: 1500px) { 
+    .itemGrid {
+        columns: 3;
+        column-gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 1200px) { 
+    .itemGrid {
+        columns: 2;
+        column-gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 700px) { 
+    .itemGrid {
+        columns: 1;
+        column-gap: 1em;
+    }
+
+    .topContainer {
+        #fgImage {
+            display: none;
+        }
+        #bgImage {
+            display: none;
+        }
+    }
+
+    .foregroundText {
+        #phoneBreak {
+            display: inline;
+        }
+        h1 { 
+            font-size: 1em;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+        }
+    }
+}

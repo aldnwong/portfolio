@@ -1,0 +1,81 @@
+---
+const { type, title, description, linkText, link, image, imgPos } = Astro.props;
+var displayImg = (image) ? "block" : "none";
+var displayLText = (link) ? "inline-block" : "none";
+
+import colors from '../config/gridColors.json';
+var mainColor = (type && colors[type]) ? colors[type].mainColor : colors.default.mainColor;
+var bgColor = (type && colors[type]) ? colors[type].bgColor : colors.default.bgColor;
+
+var subtitle = (type) ? type.toUpperCase().replace("_", " ") : "UNCATEGORIZED";
+---
+
+<div class="item" style=`background-color: ${bgColor};`>
+    <h2 style=`color: ${mainColor};`>{subtitle}</h2>
+    <h1 style=`color: ${mainColor};`>{title}</h1>
+    <img style=`object-position: ${imgPos}; display: ${displayImg};` src={image}>
+    <p style=`color: ${mainColor};`>{description}</p>
+    <a style=`color: ${mainColor}; display: ${displayLText}` target="_blank" href={link}>{linkText || "VIEW LINK"}</a>
+</div>
+
+<style>
+    .item {
+        transition: 1s;
+        display: block;
+        float: unset;
+        box-sizing: border-box;
+        width: auto;
+        padding: 3em;
+        align-self: start;
+        transition: 1s;
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: 1em;
+
+        img {
+            float: unset;
+            width: 100%;
+            height: 15vh;
+            object-fit: cover;
+            border-radius: 1em;
+            margin-top: 3vh;
+        }
+
+        h1 {
+            font-family: 'Poppins';
+            font-size: 2.5em;
+            font-weight: 200;
+            line-height: 1.2em;
+            padding-bottom: .1em;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+        }
+
+        h2 {
+            font-family: 'Poppins';
+            font-size: 1em;
+            font-weight: 800;
+            margin-bottom: 3vh;
+        }
+
+        p {
+            padding-top: 2em;
+            font-family: 'Poppins';
+            line-height: 1.25em;
+            font-size: 1em;
+            font-weight: 400;
+        }
+
+        a {
+            font-family: 'Poppins';
+            font-size: 1em;
+            padding-top: 2em;
+            font-weight: 500;
+        }
+    }
+</style>
