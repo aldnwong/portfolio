@@ -3,18 +3,71 @@ import config from '../config/config.json';
 const {
 	words, 
 	unhighlighted, 
-	typeTime} = config.sequence;
-const unhighlightedWord = config.sequence.unhighlighted;
-var deleteTime = config.sequence.deleteTime;
-var switchTime = config.sequence.switchTime;
-const obfLetters = config.sequence.obfuscationSymbols;
-const highlightColor = config.backgroundText.highlightedColor;
-const bgColor = config.backgroundText.color;
-const reducedModeThreshold = config.sequence.reducedModeThreshold;
-const bgTextTransitionTime = config.backgroundText.transitionTime;
-var doHighlight = true;
-var doSpeedTest = true;
-const switchElement = document.getElementById("foregroundWordSwitch");
-const cursorElement = document.getElementById("foregroundWordCursor");
+	typeTime,
+	deleteTime,
+	switchTime
+} = config.sequence;
 
-console.log(words);
+const whoAmIElement = document.getElementById("whoAmIText");
+const cursorElement = document.getElementById("blinkingCursor");
+
+async function wait(ms) {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve("Done");
+		}, ms)
+	});
+}
+
+async function typeWord(word) {
+	return new Promise(async(resolve) => {
+		cursorElement.classList.add("paused");
+		const letterArray = word.split("");
+		for await (const letter of letterArray) {
+			console.log(letter);
+			whoAmIElement.innerHTML = whoAmIElement.innerHTML + letter;
+			await wait(typeTime);
+		}
+		cursorElement.classList.remove("paused");
+		resolve("Done!");
+	})
+}
+
+async function deleteWord() {
+	return new Promise(async(resolve) => {
+		// TODO: finish this
+		resolve("aa")
+	})
+}
+
+async function highlightWord(word) {
+	return new Promise(async(resolve) => {
+		console.log("Highlighting word ");
+		console.log("Deleted!");
+		resolve("Done!");
+	})
+}
+
+// I hate JavaScript.
+
+while(true) {
+	for await (const i of words) {
+		let typePromise = typeWord(i);
+		let highlightPromise;
+		if (i != unhighlighted) {
+			highlightPromise = highlightWord(i);
+		}
+		else {
+			highlightPromise = new Promise((resolve) => resolve());
+		}
+		
+		await Promise.all(await typePromise, await highlightPromise);
+
+		await wait(switchTime);
+
+		let deletePromise = deleteWord(i);
+		await Promise.all(await deletePromise);
+
+		console.log(" --- ok! --- ")
+	}
+}
