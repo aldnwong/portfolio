@@ -1,0 +1,27 @@
+.topContainer {
+    .foregroundText {
+        h1 { 
+            z-index: -1;
+        }
+
+        #whoAmIText { 
+            z-index: -1;
+        }
+
+        #blinkingCursor { 
+            z-index: -1;
+        }
+    }
+
+    .backgroundText {
+        z-index: -4;
+    }
+
+    #fgImage {
+        z-index: -3;
+    }
+
+    #bgImage {
+        z-index: -5;
+    }
+}
