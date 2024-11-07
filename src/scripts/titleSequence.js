@@ -9,8 +9,7 @@ while(true) {
 		let typeDeterminer = (determiner && whoAmIElement.innerHTML.length == 0);
 		
 		if (!determiner && whoAmIElement.innerHTML.length != 0) {
-			let deletePromise = deleteWord("a ");
-			await Promise.all(await deletePromise);
+			await deleteWord("a ");
 		}
 	
 		await typeWord((typeDeterminer) ? "a " + i : i);
