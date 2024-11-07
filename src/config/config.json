@@ -1,9 +1,7 @@
 {
     "sequence": {
-        "words":["Alden", "student", "developer", "video editor"],
-        "unhighlighted":["Alden"],
+        "words":["Alden", "student", "programmer"],
         "noDeterminer":["Alden"],
-        "obfuscationSymbols":"BCDFHJKLMNPQSTVWXYZbcdfhjklmnpqstvwxyz",
         "typeTime":60,
         "deleteTime":55,
         "switchTime":2500,
@@ -11,13 +9,11 @@
     },
 
     "backgroundText": {
-        "color": "rgb(55, 55, 55)",
-        "highlightedColor": "rgb(85, 85, 85)",
-        "highlightTransitionTime": 1,
-        "amount":32,
-        "lineLength":600,
-        "marginMax":30,
-        "transitionTime":"1s"
+        "lineAmount":60,
+        "textOptions": ["/txt/portfolio.txt", "/txt/simplegroups.txt", "/txt/mousetrack.txt", "/txt/colonthree.txt"],
+        "switchTime": 100,
+        "opacityHide": 0.03,
+        "opacityShow": 0.07
     },
 
     "projectGrid": {

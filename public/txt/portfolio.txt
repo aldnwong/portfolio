@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content='width=device-width, initial-scale=1' name='viewport'/>
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio | aldenw.ong</title>
+		<meta name="description" content="Hi, I'm Alden!">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/mainStyle.css">
+		<link rel="stylesheet" href="css/windowResize.css">
+		<link rel="stylesheet" href="css/keyframes.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="preload" href="fonts/ConsolasWeb.woff2" as="font" type="font/woff2" crossorigin>
+		<script src="../scripts/reset.js" />
+		<script src="../scripts/bgTextCreator.js" />
+		<script src="../scripts/scrollBgEffect.js" />
+		<script src="../scripts/titleSequence.js" />
+	</head>
+	<body>
+		<div class="topContainer">
+			<div class="backgroundText" id="backgroundTextElement">
+			</div>
+			<div class="foregroundText">
+				<h1 id="foregroundTitle">hi, i'm <span id="phoneBreak" style="display: none;"><br></span><span id="whoAmIText"></span><span id="blinkingCursor">|</span></h1>
+			</div>
+			<img id="fgImage" src="img/FG.png" draggable="false">
+			<img id="bgImage" src="img/BG.png" draggable="false">
+		</div>
+		<div class="about" id="aboutContainer">
+			<p style="text-align: center; font-size: 3em; font-weight: 800;">
+				Hi! I'm Alden.
+			</p>
+			<p style="padding-left: 10vw; padding-right: 10vw;">
+				<br><br>I'm currently a student aiming to get a degree in Computer Science. I enjoy tinkering with technology, running a homelab in my spare time and creating whatever projects come to mind.
+				Aside from programming, I also have a bunch of other hobbies I do in my free time. 
+				I mainly enjoy playing video games with friends, but I also enjoy indoor rock climbing, listening to music, video editing, and more.
+			</p>
+			<p style="text-align: center;">
+				<br>
+				<a href="https://github.com/aldnwong" target="_blank" style="text-decoration: none; color: white;" class="fa fa-github" />
+				<a href="https://instagram.com/aldnwong" target="_blank" style="text-decoration: none; color: white;" class="fa fa-instagram" />
+				<a href="mailto:hi@aldenw.ong" target="_blank" style="text-decoration: none; color: white;" class="fa fa-envelope" />
+			</p>
+		</div>
+		<div style="height:10vh; width: 100%; content:'';" />
+		<p id="workTitle">
+			Projects
+		</p>
+		<div style="height:5vh; width: 100%; content:'';" />
+		<div class="itemGrid">
+			<ItemGrid></ItemGrid>
+		</div>
+	</body>
+</html>

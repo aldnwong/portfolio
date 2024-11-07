@@ -1,14 +1,5 @@
 import config from '../config/config.json';
-
-const {
-	words, 
-	unhighlighted, 
-	noDeterminer,
-	typeTime,
-	deleteTime,
-	switchTime
-} = config.sequence;
-
+const { words, noDeterminer, typeTime, deleteTime, switchTime } = config.sequence;
 const whoAmIElement = document.getElementById("whoAmIText");
 const cursorElement = document.getElementById("blinkingCursor");
 
@@ -31,7 +22,7 @@ while(true) {
 async function wait(ms) {
 	return new Promise((resolve) => {
 		setTimeout(() => {
-			resolve("Done");
+			resolve();
 		}, ms)
 	});
 }
@@ -44,7 +35,7 @@ async function typeWord(word) {
 			whoAmIElement.innerHTML = whoAmIElement.innerHTML + letter;
 		}
 		cursorElement.classList.remove("paused");
-		resolve("");
+		resolve();
 	})
 }
 
@@ -56,7 +47,7 @@ async function deleteWord(word) {
 			await wait(deleteTime);
 			whoAmIElement.innerHTML = whoAmIElement.innerHTML.substring(0, whoAmIElement.innerHTML.length-1);
 		}
-		resolve("");
+		resolve();
 	})
 }
 

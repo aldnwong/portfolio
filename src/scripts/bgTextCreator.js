@@ -1,75 +1,42 @@
 import config from '../config/config.json';
-const words = config.sequence.words;
-const obfLetters = config.sequence.obfuscationSymbols;
-const bgTextElementsAmt = config.backgroundText.amount;
-const h2MarginMax = config.backgroundText.marginMax;
-const transitionTime = config.backgroundText.transitionTime;
-const h2LineLength = config.backgroundText.lineLength;
+const {lineAmount, textOptions, switchTime, opacityHide, opacityShow} = config.backgroundText;
+var elements = [];
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            entry.target.classList.remove('hide');
-        }
-        else {
-            entry.target.classList.remove('show');
-            entry.target.classList.add('hide');
-        }
-    });
-});
+for (let i = 0; i < lineAmount; i++) {
+    var element = document.createElement("h2");
+    document.getElementById("backgroundTextElement").appendChild(element);
+    element.classList.add("hide");
+    elements[i] = element;
+}
 
-for (let i = 0; i < bgTextElementsAmt; i++) {
-    var obfuscated = [];
-    // CREATE OBFUSCATED WORDS
-    for (let i = 0; i < words.length; i++) {
-        const word = words[i];
-        var obfWord = "";
-        let lastRand = Math.floor(Math.random()*obfLetters.length);
-        for (let j = 0; j < word.length; j++) {
-            let rand = Math.floor(Math.random()*obfLetters.length);
-            while (rand == lastRand) rand = Math.floor(Math.random()*obfLetters.length);
-            lastRand = rand;
-            obfWord += obfLetters.charAt(rand);
-        }
-        obfuscated[i] = obfWord;
+let first = true;
+
+while(true) {
+    for await (const textFile of textOptions) {
+        await fetch(textFile)
+            .then(async(result) => {
+                if (result.status == 404) return;
+                var text = await result.text();
+                var lines = text.replaceAll("\t", "   ").split("\n");
+                let i = 0;
+                for await (const line of lines) {
+                    if (i >= lineAmount) break;
+                    elements[i].style.opacity = opacityHide;
+                    if (!first) await wait(switchTime);
+                    elements[i].textContent = line;
+                    elements[i].style.opacity = opacityShow;
+                    i++;
+                }
+                if (first) first = false;
+            })
+            .catch((error) => console.error(error));
     }
+}
 
-    // CREATE h2 ELEMENT
-    var element = document.createElement("h2")
-    var parentElement = document.getElementById("backgroundTextElement");
-    parentElement.appendChild(element)
-    observer.observe(element);
-
-    // SET INNER HTML
-    var text = "";
-    var startingIndex = Math.floor(Math.random()*words.length);
-
-    // CHANGE STARTING INDEX SO ITS MORE RANDOM
-    if (startingIndex == 0 || startingIndex == 1) {
-        for (let j = 1; j < words.length; j++) {
-            text += "<span class='"+words[j]+"'>"+obfuscated[j]+"</span>"; 
-        }
-    }
-    else if (startingIndex == words.length) {
-        for (let j = words.length-1; j > 0; j--) {
-            text += "<span class='"+words[j]+"'>"+obfuscated[j]+"</span>"; 
-        }
-    }
-    else {
-        for (let j = startingIndex; j < words.length; j++) {
-            text += "<span class='"+words[j]+"'>"+obfuscated[j]+"</span>"; 
-        }
-        for (let k = 1; k < startingIndex; k++) {
-            text += "<span class='"+words[k]+"'>"+obfuscated[k]+"</span>"; 
-        }
-    }
-
-    // SET THE INNER HTML AND RANDOMIZE MARGIN & TRANSFORM SO IT SHIFTS. WHY AM I YELLING IN THESE COMMENTS. I GUESS IT MAKES IT FEEL MORE OFFICIAL? IDK LMAO
-    while (element.textContent.length < h2LineLength) {
-        element.innerHTML += text;
-    }
-    element.style.marginLeft = (Math.random()*h2MarginMax)+"vw";
-    element.style.transition = transitionTime;
-    element.classList.add("bgTE");
+async function wait(ms) {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve();
+		}, ms)
+	});
 }
