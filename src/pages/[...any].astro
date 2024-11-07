@@ -7,7 +7,6 @@ const parsed = JSON.parse(data)
 if (parsed.url == null) {
 	Astro.response.status = 404;
 	Astro.response.statusText = "Not found";
-	return Astro.redirect('/');
 } else {
 	return Astro.redirect(parsed.url);
 }

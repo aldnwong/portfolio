@@ -46,4 +46,10 @@
             hyphens: auto;
         }
     }
+
+    .backgroundText {
+        h2 {
+            margin-left: 0vw !important;
+        }
+    }
 }
