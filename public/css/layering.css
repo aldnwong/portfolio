@@ -1,18 +1,4 @@
-.topContainer {
-    .foregroundText {
-        h1 { 
-            z-index: -1;
-        }
-
-        #whoAmIText { 
-            z-index: -1;
-        }
-
-        #blinkingCursor { 
-            z-index: -1;
-        }
-    }
-
+.top {
     .backgroundText {
         z-index: -4;
     }
