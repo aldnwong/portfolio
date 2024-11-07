@@ -8,7 +8,7 @@ async function iHateJavaScript() {
 
 async function iReallyHateJavaScript() {
     await runBgSequence()
-    iReallyHateJavaScript()();
+    iReallyHateJavaScript();
 }
 
 iHateJavaScript()
