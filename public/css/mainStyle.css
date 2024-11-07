@@ -1,19 +1,4 @@
-@font-face {
-    font-family: Consolas;
-    src: url("../fonts/ConsolasWeb.woff2");
-}
-
-.overlay {
-    width: 90vw;
-    height: 90vh;
-    border-left: solid 5vw red;	
-	border-radius: 10vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.topContainer {
+.top {
     width: 100%;
     height: 100vh;
     display: grid;
@@ -24,45 +9,30 @@
         grid-area: inner-div;
 
         h1 { 
-            display: block;
             font-family: 'Poppins';
             font-weight: 300;
             font-size: 4em;
             color: rgb(255, 255, 255);
-            text-align: center;
             padding-left: 5vw;
             padding-right: 5vw;
             user-select: none;
-            z-index: -1;
         }
 
         #whoAmIText { 
             color: rgb(255, 255, 255);
             font-weight: 800;
-            z-index: -1;
         }
 
         #blinkingCursor { 
             color: rgb(189, 189, 189);
             font-weight: 300;
             padding-left: .1em;
-            animation-name: blink;
-            animation-fill-mode: both;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            z-index: -1;
-        }
-
-        #blinkingCursor.paused { 
-            opacity: 1;
-            animation: none;
         }
     }
 
     .backgroundText {
         position: absolute;
         top: 0;
-        z-index: -4;
         overflow: hidden;
         max-height: 100%;
         width: 100%;       
@@ -75,41 +45,28 @@
             color: rgb(255, 255, 255);
             white-space: pre;
             user-select: none;
-            transition-timing-function: ease-in-out;
-            margin-left: 25vw;
-            transition: opacity .1s;
+            margin-left: 20vw;
         }
     }
-
-    .backgroundText.disabled {
-        display: none;
+    
+    #fgImage, #bgImage {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        object-fit: cover;
+        object-position: left;
     }
 
     #fgImage {
         transition: 0.1s;
-        z-index: -3;
-        position: absolute;
-        top: 0;
-        left: 0;
-        user-select: none;
-        object-fit: cover;
-        width: 100vw;
-        height: 100vh;
-        object-position: left;
-        
     }
+
     #bgImage {
         transition: 0.01s;
         opacity: 30%;
-        z-index: -5;
-        position: absolute;
-        top: 0;
-        left: 0;
-        user-select: none;
-        object-fit: cover;
-        object-position: left;
-        width: 100vw;
-        height: 100vh;
     }
 }
 
@@ -120,16 +77,30 @@
     margin: auto;
     box-sizing: border-box;
 
+    h1 {
+        font-family: Poppins;
+        color: #ffffff;
+        text-align: center; 
+        font-size: 3em; 
+        font-weight: 800;
+    }
+
     p {
+        padding-left: 5vw; 
+        padding-right: 5vw;
         font-family: Poppins;
         font-weight: 400;
         font-size: 1.5em;
         color: #ffffff;
-        text-align: left;
+        text-align: center;
+    }
+
+    #socialLinks {
+        font-size: 3em;
     }
 }
 
-#workTitle {
+#projectsTitle {
     text-align: center; 
     font-family: Poppins;
     color: #ffffff;
@@ -137,31 +108,6 @@
     font-weight: 800;
 }
 
-div#reducedWarning {
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
-    display: none;
-    
-    a {
-        font-family: 'Consolas';
-        text-decoration: underline;
-        color: rgb(255, 255, 255);
-    }
-}
-
 html {
     background-color: rgb(25, 25, 25);
-}
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }

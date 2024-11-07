@@ -22,14 +22,24 @@
             "bgColor": "#050505"
         },
         
-        "programming": {
-            "mainColor": "#00aa9b",
-            "bgColor": "#110B11"
+        "autohotkey": {
+            "mainColor": "#8BF088",
+            "bgColor": "#083706"
         },
 
-        "video_editing": {
-            "mainColor": "#AEA4BF",
-            "bgColor": "#3B252C"
+        "html/css/javascript": {
+            "mainColor": "#E96228",
+            "bgColor": "#22181C"
+        },
+
+        "javascript": {
+            "mainColor": "#F7DF1E",
+            "bgColor": "#000000"
+        },
+        
+        "lua": {
+            "mainColor": "#FFFFFF",
+            "bgColor": "#00003D"
         }
     }
 }
