@@ -4,8 +4,8 @@ var displayImg = (image) ? "block" : "none";
 var displayLText = (link) ? "inline-block" : "none";
 
 import config from '../config/config.json';
-var mainColor = (type && config.projectGrid[type]) ? config.projectGrid[type].mainColor : config.projectGrid.default.mainColor;
-var bgColor = (type && config.projectGrid[type]) ? config.projectGrid[type].bgColor : config.projectGrid.default.bgColor;
+var mainColor = (type && config.projectGrid[type].color) ? config.projectGrid[type].color : config.projectGrid.default.color;
+var bgColor = (type && config.projectGrid[type].bgColor) ? config.projectGrid[type].bgColor : config.projectGrid.default.bgColor;
 
 var subtitle = (type) ? type.toUpperCase().replace("_", " ") : "UNCATEGORIZED";
 ---

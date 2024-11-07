@@ -18,33 +18,28 @@
 
     "projectGrid": {
         "default": {
-            "mainColor": "#BBBBBB",
+            "color": "#BBBBBB",
             "bgColor": "#050505"
         },
         
         "autohotkey": {
-            "mainColor": "#8BF088",
-            "bgColor": "#083706"
+            "color": "#8BF088"
         },
 
         "html/css/javascript": {
-            "mainColor": "#E96228",
-            "bgColor": "#22181C"
+            "color": "#E96228"
         },
 
         "javascript": {
-            "mainColor": "#F7DF1E",
-            "bgColor": "#000000"
+            "color": "#F7DF1E"
         },
         
         "lua": {
-            "mainColor": "#FFFFFF",
-            "bgColor": "#00003D"
+            "color": "#FFFFFF"
         },
 
         "java": {
-            "mainColor": "#FBC174",
-            "bgColor": "#314C5E"
+            "color": "#FBC174"
         }
     }
 }
