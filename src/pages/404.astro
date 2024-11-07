@@ -1,3 +1,70 @@
 ---
+
 ---
-not found :(
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content='width=device-width, initial-scale=1' name='viewport'/>
+		<meta name="generator" content={Astro.generator} />
+
+		<title>404 | aldenw.ong</title>
+		<meta name="description" content="404 Not Found">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+		<link rel="stylesheet" href="css/reset.css">
+	</head>
+
+	<body>
+        <div>
+            <h1>404 - Not Found :(</h1>
+            <h2><span id="location"></span> does not exist</h2>
+            <h2>redirecting back home in <span id="time"></span> seconds..</h2>
+        </div>
+
+        <script>
+            document.getElementById("location").textContent = window.location.href.substring(window.location.origin.length);
+            function augh(i) {
+                document.getElementById("time").textContent = i;
+                if (i == 0) {
+                    window.location.href = "/";
+                }
+                setTimeout(() => {augh(i-1)}, 1000);
+            }
+            augh(5)
+        </script>
+	</body>
+</html>
+
+<style>
+    h1 {
+        font-family: Poppins; 
+        font-weight: 800; 
+        font-size: 3em; 
+        color: rgb(255, 0, 0);
+        text-align: center;
+        padding-bottom: 0.5em;
+    }
+    h2 {
+        font-family: Poppins; 
+        font-weight: 300; 
+        font-size: 2em; 
+        color: rgb(95, 95, 95);
+        text-align: center;
+    }
+    #location {
+        color: rgb(255, 116, 51);
+    }
+    div {
+        margin: auto;
+        padding-top: 25vh;
+        width: 50vw;
+        height: 50vh;
+    }
+    body {
+        background-color:rgb(25, 25, 25);
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
