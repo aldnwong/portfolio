@@ -40,6 +40,11 @@
         "lua": {
             "mainColor": "#FFFFFF",
             "bgColor": "#00003D"
+        },
+
+        "java": {
+            "mainColor": "#FBC174",
+            "bgColor": "#314C5E"
         }
     }
 }
