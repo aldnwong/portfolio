@@ -11,7 +11,7 @@ for (let i = 0; i < lineAmount; i++) {
 
 let first = true;
 
-while(true) {
+async function runBgSequence() {
     for await (const textFile of textOptions) {
         await fetch(textFile)
             .then(async(result) => {
@@ -40,3 +40,5 @@ async function wait(ms) {
 		}, ms)
 	});
 }
+
+export { runBgSequence }

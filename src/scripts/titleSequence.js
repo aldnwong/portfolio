@@ -3,7 +3,7 @@ const { words, noDeterminer, typeTime, deleteTime, switchTime } = config.sequenc
 const whoAmIElement = document.getElementById("whoAmIText");
 const cursorElement = document.getElementById("blinkingCursor");
 
-while(true) {
+async function runTitleSequence() {
 	for await (const i of words) {
 		const determiner = !noDeterminer.includes(i);
 		let typeDeterminer = (determiner && whoAmIElement.innerHTML.length == 0);
@@ -25,6 +25,7 @@ async function wait(ms) {
 		}, ms)
 	});
 }
+
 
 async function typeWord(word) {
 	return new Promise(async(resolve) => {
@@ -49,5 +50,7 @@ async function deleteWord(word) {
 		resolve();
 	})
 }
+
+export { runTitleSequence }
 
 // I hate JavaScript.
