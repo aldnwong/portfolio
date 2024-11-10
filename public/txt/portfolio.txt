@@ -41,7 +41,6 @@
 			<p style="text-align: center;">
 				<br>
 				<a href="https://github.com/aldnwong" target="_blank" style="text-decoration: none; color: white;" class="fa fa-github" />
-				<a href="https://instagram.com/aldnwong" target="_blank" style="text-decoration: none; color: white;" class="fa fa-instagram" />
 				<a href="mailto:hi@aldenw.ong" target="_blank" style="text-decoration: none; color: white;" class="fa fa-envelope" />
 			</p>
 		</div>
