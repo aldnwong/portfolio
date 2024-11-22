@@ -2,28 +2,20 @@ const body = document.getElementById("body");
 const eyeL = document.getElementById("eyeL");
 const eyeR = document.getElementById("eyeR");
 const button = document.getElementById("button");
-
 var hidden = false;
 var widened = false;
 var moving = false;
-
 addEventListener("mousemove", (event) => {
     if (hidden) return;
-
     var cX = event.clientX;
     var cY = event.clientY;
-
     var wCen = body.offsetLeft + body.offsetWidth / 2;
     var hCen = body.offsetTop + (body.offsetHeight*236.5)/1080;
-
     var distX = (wCen - cX)/wCen*-1;
     var distY = (hCen - cY)/hCen*-1;
-
     var touchingFace = cX >= wCen-(wCen*.075) && cX <= wCen+(wCen*.075) && cY >= hCen-(hCen*.125) && cY <= hCen+(hCen*.125);
-
     eyeL.style.transform = `translate(${distX}%,${distY}%)`;
     eyeR.style.transform = `translate(${distX}%,${distY}%)`;
-
     if (touchingFace && !widened && !moving) {
         moving = true;
         function openEye(i) {
@@ -48,6 +40,5 @@ addEventListener("mousemove", (event) => {
         }
         setTimeout(function(){closeEye(8)}, 1)
     }
-
     scriptspan.innerText = `CLIENT COORDS: ${event.clientX}, ${event.clientY}\nELEMENT CENTER: ${wCen}, ${hCen}\nDISTANCE TO CENTER: ${distX}, ${distY}`;
 });
