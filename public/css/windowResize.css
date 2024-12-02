@@ -21,11 +21,13 @@
             display: none;
         }
         #bgImage {
-            display: none;
+           object-position: left;
         }
     }
 
     .foregroundText {
+        left: 5vw !important;
+
         #phoneBreak {
             display: inline;
         }
@@ -39,6 +41,7 @@
     }
 
     .backgroundText {
+        opacity: 0.15;
         margin-top: 5vw;
         h2 {
             margin-left: 5vw !important;  

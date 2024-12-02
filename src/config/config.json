@@ -9,11 +9,11 @@
     },
 
     "backgroundText": {
-        "lineAmount":60,
+        "lineAmount":55,
         "textOptions": ["/txt/portfolio.txt", "/txt/simplegroups.txt", "/txt/mousetrack.txt", "/txt/colonthree.txt"],
         "switchTime": 100,
-        "opacityHide": 0.03,
-        "opacityShow": 0.07
+        "opacityHide": 0.1,
+        "opacityShow": 0.2
     },
 
     "projectGrid": {
