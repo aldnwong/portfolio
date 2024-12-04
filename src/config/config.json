@@ -9,7 +9,7 @@
     },
 
     "backgroundText": {
-        "lineAmount":55,
+        "lineAmount":50,
         "textOptions": ["/txt/portfolio.txt", "/txt/simplegroups.txt", "/txt/mousetrack.txt", "/txt/colonthree.txt"],
         "switchTime": 100,
         "opacityHide": 0.1,
